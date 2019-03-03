@@ -1,13 +1,181 @@
 :root{
+    --padding:25px;
+    --borderTop: 1px solid rgba(0, 0, 0, 0.1);
+}
 
+*{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5{
+    margin: 0;
+    padding: 0; 
 }
 
 body{
     background-color: #fafafc;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .header{
     margin-top: 80px;
-    padding-left: 25px;
+    padding-left: var(--padding);
+    margin-bottom: 50px;
 }
 
+.navigation{
+    padding: 0px var(--padding);
+    margin-bottom: 30px;
+}
+
+.navigation .navigation__list{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+    grid-gap: 40px;
+}
+
+.navigation__list .navigation__item{
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-gap: 10px;
+    text-align: center;
+    transition: opacity 0.1s linear ;
+}
+
+.navigation__item .item__icon{
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    transition: box-shadow .2s linear;
+    cursor: pointer;
+}
+
+.navigation__list:hover .navigation__item{
+    opacity:0.5;
+}
+
+
+.navigation__list .navigation__item:hover{
+    opacity:1;
+}
+
+.navigation__list .navigation__item:hover .item__icon{
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 6px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.item__icon .icon__emoji{
+    font-size: 20px;
+}
+
+.navigation__item .item__text{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.featured{
+    padding: var(--padding);
+    padding-top: 25px;
+    border-top: var(--borderTop);
+}
+
+.featured .featured__title{
+    margin: 0;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+
+.featured .featured__wrapper{
+    overflow: scroll;
+    display: grid;
+    grid-auto-columns: minmax(200px, 1fr);
+    grid-auto-flow: column;
+    grid-gap: 30px;
+    padding-bottom: 20px;
+}
+
+.featured__meal{
+    height: 150px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    color: white;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+
+.featured__meal:first-child{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://cdn-image.myrecipes.com/sites/default/files/image/recipes/su/08/03/penne-broccoli-su-608336-x.jpg");
+    
+}
+
+.featured__meal:nth-child(2){
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://x9wsr1khhgk5pxnq1f1r8kye-wpengine.netdna-ssl.com/wp-content/uploads/Scrambled-with-Milk-930x620.jpg");
+    
+}
+
+.featured__meal:nth-child(3){
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://tasteandsee.com/wp-content/uploads/2017/06/Easy-Pimento-Cheese-and-Bacon-Burger-EL-burger-great.jpg");
+   
+    }
+
+.featured__meal:last-child{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://realfood.tesco.com/media/images/RFO-1400x919-MushroomSoup-53f74338-aa39-4c34-b5da-2858937db4c5-0-1400x919.jpg");
+    
+}
+
+.featured-meal__title{
+    margin-right: 10px;
+}
+
+
+.featured-meal__button {
+    background-color: white;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    outline: 0;
+    border-style: hidden;
+}
+
+.recipes{
+    margin-top: 20px;
+    padding-top: 25px;
+    border-top: var(--borderTop);
+}
+
+.recipes__list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    
+}
+
+.recipes__list .recipe:nth-child(odd) {
+    background-color: white;
+    
+}
+
+.recipes__list .recipe{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:15px var(--padding);
+}
